@@ -1,0 +1,1 @@
+/Volumes/Data/Work/Project/Thick/Thick/UITests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
