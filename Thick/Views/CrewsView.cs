@@ -7,9 +7,10 @@ namespace Thick
 {
 	class Crew
 	{
-		public int CellIndex { get; set;}
+		public int Index { get; set;}
 		public string Name { get; set;}
-//		public bool CellType
+		public bool IsOpened { get; set;}
+		public bool IsCrew { get; set; }
 	}
 
 	class IndexedButton : Button {
@@ -39,7 +40,7 @@ namespace Thick
 				VerticalOptions = LayoutOptions.Center
 			};
 
-			plus.SetBinding (IndexedButton.ButtonIndexProperty, "CellIndex");
+			plus.SetBinding (IndexedButton.ButtonIndexProperty, "Index");
 
 			plus.Clicked += async(object sender, EventArgs e) => {
 				IndexedButton button = sender as IndexedButton;
@@ -53,6 +54,8 @@ namespace Thick
 				Children = {name, plus}
 			} ;
 
+
+
 			View = viewLayout;
 		}
 	}
@@ -65,14 +68,37 @@ namespace Thick
 			Title = "CREWS";
 
 			ListView crewListView = new ListView ();
-			List<Crew> source = new List<Crew> ();
-			for (int i = 0; i <= 4; i++) {
-				source.Add( new Crew { CellIndex = i, Name = "Crew" + (i + 1) });
+			List<Crew> originalSource = new List<Crew> ();
+			List<Crew> realSource = new List<Crew> ();
+//			for (int i = 0; i <= 4; i++) {
+//				originalSource.Add( new Crew { Index = i, Name = "Crew" + (i + 1), IsCrew = true, IsOpened = false });
+//			}
+			originalSource.Add( new Crew { Index = 0, Name = "Crew1", IsCrew = true, IsOpened = false });
+			originalSource.Add( new Crew { Index = 1, Name = "Contact1", IsCrew = false, IsOpened = false });
+			originalSource.Add( new Crew { Index = 2, Name = "Contact2", IsCrew = false, IsOpened = false });
+			originalSource.Add( new Crew { Index = 3, Name = "Contact3", IsCrew = true, IsOpened = false });
+			originalSource.Add( new Crew { Index = 4, Name = "Crew2", IsCrew = true, IsOpened = false });
+			originalSource.Add( new Crew { Index = 5, Name = "Contact3", IsCrew = true, IsOpened = false });
+			originalSource.Add( new Crew { Index = 6, Name = "Contact4", IsCrew = true, IsOpened = false });
+
+			for (int i = 0; i < originalSource.Count; i++) {
+				if (originalSource[i].IsCrew) {
+					realSource.Add (originalSource [i]);
+				}
 			}
-			crewListView.ItemsSource = source;
+
+			crewListView.ItemsSource = realSource;
 			crewListView.ItemTemplate = new DataTemplate (typeof(CrewCell));
 			crewListView.ItemTapped += async (object sender, ItemTappedEventArgs e) => {
-//				await this.Content.ParentView.Navigation.PushAsync(new ContactDetailView());
+				Crew item = e.Item as Crew;
+				if (item.IsCrew) {
+					if (!item.IsOpened) {
+						for (int i = 0; i < ; i++) {
+							
+						}
+					}
+				}
+
 			};
 
 			StackLayout mainLayout = new StackLayout {

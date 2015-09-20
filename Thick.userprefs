@@ -1,13 +1,9 @@
 ﻿<Properties StartupItem="iOS/Thick.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.3" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Thick/Views/MainTabView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Thick/Views/CrewsView.cs">
     <Files>
-      <File FileName="Thick/Views/CurrentEventView.cs" Line="1" Column="1" />
-      <File FileName="Thick/Views/ContactsView.cs" Line="40" Column="57" />
-      <File FileName="Thick/Views/CrewsView.cs" Line="18" Column="55" />
-      <File FileName="Thick/Views/Dashboard/CheckCodeView.cs" Line="1" Column="1" />
-      <File FileName="Thick/Server/Communication.cs" Line="1" Column="1" />
-      <File FileName="Thick/Views/MainTabView.cs" Line="192" Column="26" />
+      <File FileName="Thick/Views/ContactsView.cs" Line="34" Column="15" />
+      <File FileName="Thick/Views/CrewsView.cs" Line="80" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

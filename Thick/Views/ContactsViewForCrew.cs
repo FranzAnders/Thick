@@ -8,8 +8,8 @@ namespace Thick
 {
 	class ExtendedContact
 	{
-		public int CellIndex { get; set;}
-		public string ContactName { get; set;}
+		public int Index { get; set;}
+		public string Name { get; set;}
 		public bool IsSelected { get; set;}
 		public string ImageName { get; set;}
 	}
@@ -46,7 +46,7 @@ namespace Thick
 	{
 		public ContactsViewForCrew ()
 		{
-			Title = "CONTACTS";
+			Title = "THICK AS THIEVES";
 
 			SearchBar searchBar = new SearchBar {
 				Placeholder = "Search"
@@ -60,7 +60,7 @@ namespace Thick
 
 			ObservableCollection<ExtendedContact> source = new ObservableCollection<ExtendedContact> ();
 			for (int i = 0; i < 30; i++) {
-				source.Add(new ExtendedContact { CellIndex = i, ContactName = "Contact" + (i + 1), IsSelected = false, ImageName = "unselected_circle.png"});
+				source.Add(new ExtendedContact { Index = i, Name = "Contact" + (i + 1), IsSelected = false, ImageName = "unselected_circle.png"});
 			}
 			contactListView.ItemsSource = source;
 			contactListView.ItemTemplate = new DataTemplate (typeof(ExtendedContactCell));
@@ -74,15 +74,31 @@ namespace Thick
 				else {
 					contact.ImageName = "unselected_circle.png";
 				}
-				source[contact.CellIndex] = contact;
+				source[contact.Index] = contact;
 			};
+
+			Label doneButton = new Label {
+//				Style = Device.Styles.CaptionStyle,
+				BackgroundColor = Color.FromRgb (39, 137, 174),
+				TextColor = Color.FromRgb (197, 179, 87),
+				Text = "Done",
+				XAlign = TextAlignment.Center,
+				YAlign = TextAlignment.Center,
+				HeightRequest = 60
+			};
+			TapGestureRecognizer tapGesture = new TapGestureRecognizer ();
+			tapGesture.Tapped += (object sender, EventArgs e) => {
+				Navigation.PopAsync();
+			};
+			doneButton.GestureRecognizers.Add (tapGesture);
 
 			StackLayout mainLayout = new StackLayout {
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				Children = {
 					searchBar,
 					myNumber,
-					contactListView
+					contactListView,
+					doneButton
 				}
 			};
 

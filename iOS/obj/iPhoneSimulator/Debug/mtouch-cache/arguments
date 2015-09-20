@@ -1,10 +1,10 @@
 # Version: 9.0.1.18 (xcode7-c5: d230615)
-# [first argument, ignore] # /Volumes/Data/Work/Project/Thick/Thick/iOS/mtouch.exe
+# [first argument, ignore] # /Volumes/Data/Work/GitRepo/Thick/iOS/mtouch.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/9.0.1.18/bin/mtouch \
 	--cache \
-	/Volumes/Data/Work/Project/Thick/Thick/iOS/obj/iPhoneSimulator/Debug/mtouch-cache \
+	/Volumes/Data/Work/GitRepo/Thick/iOS/obj/iPhoneSimulator/Debug/mtouch-cache \
 	--sim \
-	/Volumes/Data/Work/Project/Thick/Thick/iOS/bin/iPhoneSimulator/Debug/Thick.iOS.app \
+	/Volumes/Data/Work/GitRepo/Thick/iOS/bin/iPhoneSimulator/Debug/Thick.iOS.app \
 	--executable \
 	Thick.iOS \
 	--debug \
@@ -18,7 +18,7 @@
 	7.0 \
 	--abi=i386 \
 	--symbollist \
-	/Volumes/Data/Work/Project/Thick/Thick/iOS/obj/iPhoneSimulator/Debug/mtouch-symbols.list \
+	/Volumes/Data/Work/GitRepo/Thick/iOS/obj/iPhoneSimulator/Debug/mtouch-symbols.list \
 	--dsym=no \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
@@ -27,37 +27,37 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.IoC.2.0.5679/lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10/XLabs.Ioc.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.IoC.2.0.5679/lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10/XLabs.Ioc.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/ExifLib.PCL.1.0.1/lib/portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/ExifLib.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/ExifLib.PCL.1.0.1/lib/portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/ExifLib.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Core.2.0.5679/lib/Xamarin.iOS10/XLabs.Core.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Core.2.0.5679/lib/Xamarin.iOS10/XLabs.Core.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Platform.2.0.5679/lib/Xamarin.iOS10/XLabs.Platform.iOS.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Platform.2.0.5679/lib/Xamarin.iOS10/XLabs.Platform.iOS.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Platform.2.0.5679/lib/Xamarin.iOS10/XLabs.Platform.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Platform.2.0.5679/lib/Xamarin.iOS10/XLabs.Platform.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Serialization.2.0.5679/lib/Xamarin.iOS10/XLabs.Serialization.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Serialization.2.0.5679/lib/Xamarin.iOS10/XLabs.Serialization.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Forms.2.0.5679/lib/Xamarin.iOS10/XLabs.Forms.iOS.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Forms.2.0.5679/lib/Xamarin.iOS10/XLabs.Forms.iOS.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Forms.2.0.5679/lib/Xamarin.iOS10/XLabs.Forms.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Forms.2.0.5679/lib/Xamarin.iOS10/XLabs.Forms.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.Maps.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.Maps.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.Maps.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.Maps.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Newtonsoft.Json.6.0.5/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Newtonsoft.Json.6.0.5/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/FubarCoder.RestSharp.Portable.2.4.4/lib/Xamarin.iOS10/RestSharp.Portable.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/FubarCoder.RestSharp.Portable.2.4.4/lib/Xamarin.iOS10/RestSharp.Portable.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Runtime.Serialization.dll \
 	-r \
@@ -65,7 +65,7 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/Thick/bin/Debug/Thick.dll \
+	/Volumes/Data/Work/GitRepo/Thick/Thick/bin/Debug/Thick.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	-r \
@@ -161,39 +161,39 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.XmlSerializer.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.IoC.2.0.5679/lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10/XLabs.Ioc.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.IoC.2.0.5679/lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10/XLabs.Ioc.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/ExifLib.PCL.1.0.1/lib/portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/ExifLib.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/ExifLib.PCL.1.0.1/lib/portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/ExifLib.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Core.2.0.5679/lib/Xamarin.iOS10/XLabs.Core.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Core.2.0.5679/lib/Xamarin.iOS10/XLabs.Core.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Platform.2.0.5679/lib/Xamarin.iOS10/XLabs.Platform.iOS.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Platform.2.0.5679/lib/Xamarin.iOS10/XLabs.Platform.iOS.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Platform.2.0.5679/lib/Xamarin.iOS10/XLabs.Platform.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Platform.2.0.5679/lib/Xamarin.iOS10/XLabs.Platform.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Serialization.2.0.5679/lib/Xamarin.iOS10/XLabs.Serialization.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Serialization.2.0.5679/lib/Xamarin.iOS10/XLabs.Serialization.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Forms.2.0.5679/lib/Xamarin.iOS10/XLabs.Forms.iOS.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Forms.2.0.5679/lib/Xamarin.iOS10/XLabs.Forms.iOS.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/XLabs.Forms.2.0.5679/lib/Xamarin.iOS10/XLabs.Forms.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/XLabs.Forms.2.0.5679/lib/Xamarin.iOS10/XLabs.Forms.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.Maps.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.Maps.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Xamarin.Forms.Maps.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Xamarin.Forms.Maps.1.4.4.6392/lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/Newtonsoft.Json.6.0.5/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/Newtonsoft.Json.6.0.5/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/packages/FubarCoder.RestSharp.Portable.2.4.4/lib/Xamarin.iOS10/RestSharp.Portable.dll \
+	/Volumes/Data/Work/GitRepo/Thick/packages/FubarCoder.RestSharp.Portable.2.4.4/lib/Xamarin.iOS10/RestSharp.Portable.dll \
 	-r \
-	/Volumes/Data/Work/Project/Thick/Thick/Thick/bin/Debug/Thick.dll \
+	/Volumes/Data/Work/GitRepo/Thick/Thick/bin/Debug/Thick.dll \
 	--target-framework \
 	"Xamarin.iOS,v1.0" \
-	/Volumes/Data/Work/Project/Thick/Thick/iOS/bin/iPhoneSimulator/Debug//Thick.iOS.exe \
+	/Volumes/Data/Work/GitRepo/Thick/iOS/bin/iPhoneSimulator/Debug//Thick.iOS.exe \
