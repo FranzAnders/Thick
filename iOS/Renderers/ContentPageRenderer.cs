@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
 using Xamarin.Forms.Platform.iOS;
 using Xamarin.Forms;
 using Thick;
@@ -12,21 +13,24 @@ namespace Thick.iOS
 {
 	public class ContentPageRenderer : PageRenderer
 	{
-		BaseView baseView;
+		BaseView MainBaseView;
 		UIBarButtonItem leftBarButton;
+		UIView MainUIView = null;
+		UIView LoadingView = null;
+		string LoadingText = null;
 
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear (animated);
 			ViewController.ParentViewController.NavigationItem.SetHidesBackButton (true, false);
 
-			if (baseView.ShowLeftFlag) {
+			if (MainBaseView.ShowLeftFlag) {
 				leftBarButton = new UIBarButtonItem ();
 				leftBarButton.Clicked += (object s, EventArgs args) => {
 					ViewController.NavigationController.PopViewController(true);
 				};
 				ViewController.ParentViewController.NavigationItem.LeftBarButtonItem = leftBarButton;
-				leftBarButton.Title = baseView.LeftTitle;
+				leftBarButton.Title = MainBaseView.LeftTitle;
 
 				if (ViewController.ParentViewController.NavigationItem.RightBarButtonItem != null) {
 					ViewController.ParentViewController.NavigationItem.RightBarButtonItem.SetTitleTextAttributes
@@ -35,6 +39,8 @@ namespace Thick.iOS
 					}, UIControlState.Normal);
 				}
 			}
+//			PhoneService phoneService = new PhoneService ();
+//			string str = phoneService.ICC;
 		}
 		
 		void onBack(object sender, EventArgs e) {
@@ -46,13 +52,41 @@ namespace Thick.iOS
 			base.OnElementChanged (e);
 
 			var page = e.NewElement as BaseView;
-			baseView = page;
+			MainBaseView = page;
+			MainUIView = NativeView;
 
 			page.PropertyChanged += OnElementPropertyChanged;
 		}
 
 		private void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
+			if (e.PropertyName == BaseView.LodingTextProperty.PropertyName) {
+				LoadingText = MainBaseView.LoadingText;
+			}
+			if (e.PropertyName == BaseView.LoadingFlagProperty.PropertyName && MainBaseView!= null && MainUIView != null) {
+				bool isShow = MainBaseView.LoadingFlag;
+				if (isShow == true) {
+					LoadingView = new UIView ();
+					LoadingView.Frame = new RectangleF (0, 0, (float)MainUIView.Frame.Width, (float)MainUIView.Frame.Height);
+					LoadingView.Alpha = 0.5f;
+					LoadingView.BackgroundColor = UIColor.Black;
+
+					var label = new UILabel (new RectangleF ((float)MainUIView.Frame.Width / 2 - 100, (float)MainUIView.Frame.Height / 2 - 20, 200, 40));
+					label.AdjustsFontSizeToFitWidth = true;
+					label.TextColor = UIColor.White;
+					label.TextAlignment = UITextAlignment.Center;
+					label.Text = LoadingText;
+
+					LoadingView.Add (label);
+
+					MainUIView.Add (LoadingView);
+					MainUIView.BringSubviewToFront (LoadingView);
+				} else {
+					if (LoadingView != null) {
+						LoadingView.RemoveFromSuperview ();
+					}
+				}
+			}
 /*			if (e.PropertyName == BaseView.ShowLeftBarButtonProperty.PropertyName) {
 				if (baseView.ShowLeftFlag) {
 					leftBarButton = new UIBarButtonItem ();

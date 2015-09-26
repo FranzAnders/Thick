@@ -1,6 +1,6 @@
-# Version: 9.0.1.18 (xcode7-c5: d230615)
+# Version: 9.0.1.20 (xcode7-c5: d8e9592)
 # [first argument, ignore] # /Volumes/Data/Work/GitRepo/Thick/iOS/mtouch.exe
-/Library/Frameworks/Xamarin.iOS.framework/Versions/9.0.1.18/bin/mtouch \
+/Library/Frameworks/Xamarin.iOS.framework/Versions/9.0.1.20/bin/mtouch \
 	--cache \
 	/Volumes/Data/Work/GitRepo/Thick/iOS/obj/iPhoneSimulator/Debug/mtouch-cache \
 	--sim \
@@ -62,6 +62,10 @@
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Runtime.Serialization.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Net.Http.dll \
+	-r \
+	/Volumes/Data/Work/GitRepo/Thick/packages/SQLitePCL.raw_basic.0.7.1/lib/Xamarin.iOS10/SQLitePCL.raw.dll \
+	-r \
+	/Volumes/Data/Work/GitRepo/Thick/packages/sqlite-net-pcl.1.0.11/lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
@@ -192,6 +196,10 @@
 	/Volumes/Data/Work/GitRepo/Thick/packages/Newtonsoft.Json.6.0.5/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
 	-r \
 	/Volumes/Data/Work/GitRepo/Thick/packages/FubarCoder.RestSharp.Portable.2.4.4/lib/Xamarin.iOS10/RestSharp.Portable.dll \
+	-r \
+	/Volumes/Data/Work/GitRepo/Thick/packages/SQLitePCL.raw_basic.0.7.1/lib/Xamarin.iOS10/SQLitePCL.raw.dll \
+	-r \
+	/Volumes/Data/Work/GitRepo/Thick/packages/sqlite-net-pcl.1.0.11/lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll \
 	-r \
 	/Volumes/Data/Work/GitRepo/Thick/Thick/bin/Debug/Thick.dll \
 	--target-framework \

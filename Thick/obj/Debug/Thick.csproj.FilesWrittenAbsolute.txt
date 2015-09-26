@@ -102,3 +102,5 @@
 /Volumes/Data/Work/GitRepo/Thick/Thick/bin/Debug/System.Reflection.dll
 /Volumes/Data/Work/GitRepo/Thick/Thick/bin/Debug/System.Text.Encoding.dll
 /Volumes/Data/Work/GitRepo/Thick/Thick/bin/Debug/System.Reflection.Primitives.dll
+/Volumes/Data/Work/GitRepo/Thick/Thick/bin/Debug/SQLitePCL.raw.dll
+/Volumes/Data/Work/GitRepo/Thick/Thick/bin/Debug/SQLite-net.dll

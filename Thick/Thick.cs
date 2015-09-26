@@ -6,13 +6,34 @@ namespace Thick
 {
 	public class App : Application
 	{
+		static MainDatabase database;
+		static Communication server;
+
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new NavigationPage (new GetInView()) {
+			MainPage = new NavigationPage (new SplashView()) {
 				BarBackgroundColor = Color.FromRgb(197, 179, 87),
 				BarTextColor = Color.White
 			};
+		}
+
+		public static MainDatabase Database {
+			get { 
+				if (database == null) {
+					database = new MainDatabase ();
+				}
+				return database;
+			}
+		}
+
+		public static Communication Server {
+			get { 
+				if (server == null) {
+					server = new Communication ();
+				}
+				return server;
+			}
 		}
 
 		protected override void OnStart ()
