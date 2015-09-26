@@ -7,6 +7,8 @@ namespace Thick
 {
 	public class CheckCodeView : DashboardBaseView
 	{
+		ExtendedEntry accessCode;
+
 		public CheckCodeView () : base ("Thick.Resource.Image.dashboard_background2.png", 2)
 		{
 			Label inform = new Label {
@@ -24,8 +26,10 @@ namespace Thick
 				})
 			);
 				
-			ExtendedEntry accessCode = new ExtendedEntry {
+			accessCode = new ExtendedEntry {
 				Placeholder = "Your access code",
+				Keyboard = Keyboard.Numeric,
+				MaxLength = 4,
 				TextColor = Color.White,
 				HasBorder = false,
 				PlaceholderTextColor = Color.White,
@@ -54,6 +58,31 @@ namespace Thick
 					return (Parent.Height - accessCode.Height) * 0.5;
 				})
 			);
+		}
+
+		public override async void MoveToNextPage (object sender, EventArgs e)
+		{
+			if (accessCode.Text == null || accessCode.Text.Length != 4) {
+				await DisplayAlert ("Error", "Please enter 4 digits.", "OK");
+				return;
+			}
+
+			string phoneNumber = BindingContext as string;
+			LoadingText = "Verifying the code...";
+			LoadingFlag = true;
+			JsonResponse response = await App.Server.VerifyPhoneNumber (phoneNumber, accessCode.Text);
+			LoadingFlag = false;
+
+			if (response != null) {
+				if (response.Code == "Error") {
+					await DisplayAlert (response.Code, response.Message, "OK");
+				} else if (response.Code == "Success") {
+					App.Database.SaveLoginItem (new LoginItem { PhoneNumber = phoneNumber});
+					NameView nameView = new NameView ();
+					nameView.BindingContext = phoneNumber;
+					await Navigation.PushAsync(nameView);
+				}
+			}
 		}
 	}
 }

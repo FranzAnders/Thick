@@ -2,12 +2,14 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using XLabs.Platform.Services.Geolocation;
 
 namespace Thick
 {
 	public class LocationView : BaseView
 	{
 		Map map;
+		IGeolocator locator;
 		public LocationView ()
 		{
 			ShowLeftFlag = true;
@@ -28,6 +30,10 @@ namespace Thick
 					map
 				}
 			};
+
+			if (locator.IsGeolocationAvailable) {
+				locator.PositionChanged += (object sender, PositionEventArgs e) => ;
+			}
 
 			ToolbarItems.Add (new ToolbarItem ("Next", "", async () => {
 				await Navigation.PushAsync(new ExperienceView());

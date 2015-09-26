@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace Thick
 {
@@ -43,7 +44,7 @@ namespace Thick
 			);
 			TapGestureRecognizer maleGesture = new TapGestureRecognizer ();
 			maleGesture.Tapped += async (object sender, EventArgs e) => {
-				await Navigation.PushAsync(new AllowView());	
+				await SetGender(true);
 			};
 			maleButton.GestureRecognizers.Add (maleGesture);
 
@@ -67,9 +68,34 @@ namespace Thick
 			);
 			TapGestureRecognizer femaleGesture = new TapGestureRecognizer ();
 			femaleGesture.Tapped += async (object sender, EventArgs e) => {
-				await Navigation.PushAsync(new AllowView());	
+				await SetGender(false);
 			};
 			femaleButton.GestureRecognizers.Add (femaleGesture);
+		}
+
+		public async Task SetGender(bool bMale)
+		{
+			string phoneNumber = BindingContext as string;
+			string gender;
+			if (bMale) {
+				gender = "1";
+			} else {
+				gender = "0";
+			}
+
+			LoadingText = "Sending data to server...";
+			LoadingFlag = true;
+			JsonResponse response = await App.Server.SaveGender (phoneNumber, gender);
+			LoadingFlag = false;
+			if (response != null) {
+				if (response.Code == "Error") {
+					await DisplayAlert (response.Code, response.Message, "OK");
+				} else if (response.Code == "Success") {
+					AllowView allowView = new AllowView ();
+					allowView.BindingContext = phoneNumber;
+					await Navigation.PushAsync(allowView);
+				}
+			}
 		}
 	}
 }

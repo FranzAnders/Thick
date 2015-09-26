@@ -7,6 +7,8 @@ namespace Thick
 {
 	public class NameView : DashboardBaseView
 	{
+		ExtendedEntry fullName;
+
 		public NameView () : base ("Thick.Resource.Image.dashboard_background3.png", 3)
 		{
 			Label inform = new Label {
@@ -24,7 +26,7 @@ namespace Thick
 				})
 			);
 
-			ExtendedEntry fullName = new ExtendedEntry {
+			fullName = new ExtendedEntry {
 				Placeholder = "First name | last name",
 				TextColor = Color.White,
 				PlaceholderTextColor = Color.White,
@@ -39,6 +41,30 @@ namespace Thick
 					return (Parent.Height - fullName.Height) * 0.5;
 				})
 			);
+		}
+
+		public override async void MoveToNextPage (object sender, EventArgs e)
+		{
+			if (fullName.Text == null) {
+				await DisplayAlert ("Error", "Please enter your name.", "OK");
+				return;
+			}
+
+			string phoneNumber = BindingContext as string;
+			LoadingText = "Sending data to server...";
+			LoadingFlag = true;
+			JsonResponse response = await App.Server.SaveName (phoneNumber, fullName.Text, "");
+			LoadingFlag = false;
+
+			if (response != null) {
+				if (response.Code == "Error") {
+					await DisplayAlert (response.Code, response.Message, "OK");
+				} else if (response.Code == "Success") {
+					GenderView genderView = new GenderView ();
+					genderView.BindingContext = phoneNumber;
+					await Navigation.PushAsync(genderView);
+				}
+			}
 		}
 	}
 }

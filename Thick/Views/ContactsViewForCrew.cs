@@ -78,7 +78,6 @@ namespace Thick
 			};
 
 			Label doneButton = new Label {
-//				Style = Device.Styles.CaptionStyle,
 				BackgroundColor = Color.FromRgb (39, 137, 174),
 				TextColor = Color.FromRgb (197, 179, 87),
 				Text = "Done",
@@ -86,6 +85,7 @@ namespace Thick
 				YAlign = TextAlignment.Center,
 				HeightRequest = 60
 			};
+
 			TapGestureRecognizer tapGesture = new TapGestureRecognizer ();
 			tapGesture.Tapped += (object sender, EventArgs e) => {
 				Navigation.PopAsync();

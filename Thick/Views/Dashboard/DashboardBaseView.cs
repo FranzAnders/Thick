@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace Thick
 {
-	public class DashboardBaseView : ContentPage
+	public class DashboardBaseView : BaseView
 	{
 		public TapGestureRecognizer moveNextHandler;
 		public RelativeLayout navigationLayout, mainLayout;
@@ -119,31 +119,7 @@ namespace Thick
 			Content = mainLayout;
 		}
 
-		public async void MoveToNextPage (object sender, EventArgs e) 
-		{
-			switch (index) {
-			case 0:
-				await Navigation.PushAsync(new PhoneNumberView());
-				break;
-			case 1:
-				await Navigation.PushAsync(new CheckCodeView());
-				break;
-			case 2:
-				await Navigation.PushAsync(new NameView());
-				break;
-			case 3:
-				await Navigation.PushAsync(new GenderView());
-				break;
-			case 4:
-				await Navigation.PushAsync(new AllowView());
-				break;
-			case 5:
-				await Navigation.PushAsync(new MainTabView());
-				break;
-			default:
-				break;
-			}
-		}
+		public virtual void MoveToNextPage (object sender, EventArgs e) {}
 
 		void MoveToPrevPage (object sender, EventArgs e)
 		{

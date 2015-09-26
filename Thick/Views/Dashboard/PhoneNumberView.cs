@@ -2,13 +2,14 @@
 
 using Xamarin.Forms;
 using XLabs.Forms.Controls;
+using XLabs.Platform.Services;
+using System.Threading.Tasks;
 
 namespace Thick
 {
 	public class PhoneNumberView : DashboardBaseView
 	{
 		ExtendedEntry phoneNumber;
-		Communication server;
 
 		public PhoneNumberView () : base ("Thick.Resource.Image.dashboard_background2.png", 1)
 		{
@@ -32,10 +33,15 @@ namespace Thick
 				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
 				TextColor = Color.White
 			};
+					
+//			#if __iOS__
+//				
+//			#endif
 
 			phoneNumber = new ExtendedEntry() {
 				Placeholder = "Your phone number",
 				TextColor = Color.White,
+				Keyboard = Keyboard.Telephone,
 				HasBorder = false,
 				PlaceholderTextColor = Color.White,
 				BackgroundColor = Color.Transparent
@@ -74,14 +80,28 @@ namespace Thick
 			);
 		}
 
-		protected async override void OnAppearing ()
+		public override async void MoveToNextPage (object sender, EventArgs e)
 		{
-			base.OnAppearing ();
-//			server = new Communication ();
-//			var response = await server.loadData();
-//			JsonResponse a = response;
+			if (phoneNumber.Text == null) {
+				await DisplayAlert ("Error", "Please enter your phone number.", "OK");
+				return;
+			}
+
+			string number = phoneNumber.Text;
+			number = "+17543336811";
+
+			LoadingText = "Sending your phone number to server...";
+			LoadingFlag = true;
+			JsonResponse response = await App.Server.SendPhoneNumber (number);
+			LoadingFlag = false;
+
+			if (response != null) {
+				if (response.Code == "Verify") {
+					CheckCodeView checkCodeView = new CheckCodeView ();
+					checkCodeView.BindingContext = number;
+					await Navigation.PushAsync(checkCodeView);
+				}
+			}
 		}
 	}
 }
-
-

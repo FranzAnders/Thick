@@ -39,6 +39,10 @@ namespace Thick
 				})
 			);
 		}
+
+		public override async void MoveToNextPage (object sender, EventArgs e) {
+			await Navigation.PushAsync(new MainTabView());
+		}
 	}
 }
 
