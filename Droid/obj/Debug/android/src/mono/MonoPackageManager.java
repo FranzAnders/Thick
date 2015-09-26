@@ -140,6 +140,11 @@ class MonoPackageManager_Resources {
 		"XLabs.Serialization.dll",
 		"XLabs.Ioc.dll",
 		"Xamarin.Forms.Maps.dll",
+		"RestSharp.Portable.dll",
+		"Newtonsoft.Json.dll",
+		"System.Net.Http.Primitives.dll",
+		"Microsoft.Threading.Tasks.dll",
+		"Microsoft.Threading.Tasks.Extensions.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

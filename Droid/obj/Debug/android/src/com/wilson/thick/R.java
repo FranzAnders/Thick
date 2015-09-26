@@ -11,8 +11,13 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int icon=0x7f020000;
-        public static final int monoandroidsplash=0x7f020001;
+        public static final int back_icon=0x7f020000;
+        public static final int icon=0x7f020001;
+        public static final int monoandroidsplash=0x7f020002;
+        public static final int plus_icon=0x7f020003;
+        public static final int selected_circle=0x7f020004;
+        public static final int setting_icon=0x7f020005;
+        public static final int unselected_circle=0x7f020006;
     }
     public static final class string {
         public static final int ApplicationName=0x7f030001;
